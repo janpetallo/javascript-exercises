@@ -1,11 +1,16 @@
 const leapYears = function(yearToDetermine) {
-    if(yearToDetermine % 4 === 0 &&
-        yearToDetermine % 100 === 0 &&
-        yearToDetermine % 400 === 0) {
-            return true;
-    } else {
-        return false;
-    }
+    let leap = false;
+    if(yearToDetermine % 4 === 0){
+        leap = true;
+        if(yearToDetermine % 100 === 0){
+            leap = false;
+            if(yearToDetermine % 400 === 0){
+                leap = true;
+            }
+        }
+    } 
+
+    return leap;
 };
 
 // Do not edit below this line
